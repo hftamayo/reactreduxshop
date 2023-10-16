@@ -7,7 +7,7 @@ export function cartReducer(state = initialState, action) {
     case "Add_Item_To_Cart":
       return {
         ...state,
-        cart: [...state.cart, { item: "item" }],
+        cart: [...state.cart, action.item],
       };
     case "Remote_Item_From_Cart":
       return {};
