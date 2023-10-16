@@ -11,7 +11,7 @@ function Product({ id, title, price, rating, image }) {
       <p>{rating}</p>
       <p>{price}</p>
       <img src={image}></img>
-      <button onClick={() => dispatch(addToCart())}>Add to Cart</button>
+      <button onClick={() => dispatch(addToCart(id, title, price, rating, image))}>Add to Cart</button>
     </div>
   );
 }
