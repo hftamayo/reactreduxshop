@@ -1,11 +1,18 @@
-export function addToCart() {
+export function addToCart(id, title, price, rating, image) {
   return {
     type: "Add_Item_To_Cart",
+    item: {
+      id: id,
+      title: title,
+      price: price,
+      rating: rating,
+      image: image,
+    },
   };
 }
 
 export function removeFromCart() {
-    return {
-      type: "Remove_Item_From_Cart",
-    };
-  }
+  return {
+    type: "Remove_Item_From_Cart",
+  };
+}

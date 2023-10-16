@@ -1,9 +1,30 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
 function Checkout() {
+  const cart = useSelector((state) => state.cart);
   return (
-    <div>Checkout</div>
-  )
+    <div className="checkout">
+      <div className="checkout_item">
+        {cart.cart.map((item) => {
+          return (
+            <div className="checkout_product" key={item.id}>
+              <img src={item.image}></img>
+              <div className="product_info">
+                <h4>{item.title}</h4>
+                <p>{item.rating}</p>
+                <p>{item.price}</p>
+                <button>Remove from Cart</button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="subtotal">
+        <h2>Subtotal</h2>
+      </div>
+    </div>
+  );
 }
 
-export default Checkout
+export default Checkout;
