@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "./Checkout.css";
+import SubTotal from "./SubTotal";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
@@ -21,7 +23,7 @@ function Checkout() {
         })}
       </div>
       <div className="subtotal">
-        <h2>Subtotal</h2>
+        <SubTotal />
       </div>
     </div>
   );
