@@ -2,6 +2,10 @@ const initialState = {
   cart: [],
 };
 
+export const getTotal = (cart) => {
+  return cart.reduce((amount, item) => parseInt(item.price) + amount, 0);
+};
+
 export function cartReducer(state = initialState, action) {
   switch (action.type) {
     case "Add_Item_To_Cart":
