@@ -8,7 +8,7 @@ function SubTotal() {
     <div className="subtotal">
       <div className="subtotal_area">
         <p>
-          SubTotal ({cart.cart.length} items: {getTotal(cart)})
+          SubTotal ({cart.cart.length} items: $ {getTotal(cart.cart)})
         </p>
         <button>Proceed to Checkout</button>
       </div>

@@ -1,9 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./Checkout.css";
 import SubTotal from "./SubTotal";
+import { removeFromCart } from "./Redux/cartAction";
 
 function Checkout() {
+  const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
   return (
     <div className="checkout">
@@ -16,7 +19,9 @@ function Checkout() {
                 <h4>{item.title}</h4>
                 <p>{item.rating}</p>
                 <p>{item.price}</p>
-                <button>Remove from Cart</button>
+                <button onClick={() => dispatch(removeFromCart(item.id))}>
+                  Remove from Cart
+                </button>
               </div>
             </div>
           );
