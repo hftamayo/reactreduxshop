@@ -14,7 +14,19 @@ export function cartReducer(state = initialState, action) {
         cart: [...state.cart, action.item],
       };
     case "Remote_Item_From_Cart":
-      return {};
+      const index = state.cart.findIndex(
+        (cartItem) => cartItem.id === action.id
+      );
+      let newCart = [...state.cart];
+      if (index >= 0) {
+        newCart.splice(index, 1);
+      } else {
+        console.warn("Can not delete");
+      }
+      return {
+        ...state,
+        cart: newCart,
+      };
     default:
       return state;
   }

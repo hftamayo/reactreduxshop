@@ -11,8 +11,9 @@ export function addToCart(id, title, price, rating, image) {
   };
 }
 
-export function removeFromCart() {
+export function removeFromCart(id) {
   return {
     type: "Remove_Item_From_Cart",
+    id: id,
   };
 }
