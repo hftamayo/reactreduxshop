@@ -14,7 +14,7 @@ function Home() {
         <Product
           id="1"
           title="Cabbagge 1"
-          price="$50"
+          price="50"
           rating="10/10"
           image={Product1}
         />
@@ -22,7 +22,7 @@ function Home() {
         <Product
           id="2"
           title="Cabbagge 2"
-          price="$50"
+          price="50"
           rating="10/10"
           image={Product2}
         />
@@ -30,7 +30,7 @@ function Home() {
         <Product
           id="3"
           title="Cabbagge 3"
-          price="$50"
+          price="50"
           rating="10/10"
           image={Product3}
         />
